@@ -277,23 +277,6 @@ const AddManagers = () => {
                 />
               </div>
 
-              <div className="">
-                <label
-                  htmlFor="experienceYears"
-                  className="block mb-2 text-sm font-medium text-gray-900 dark:text-black"
-                >
-                  Experience in Years
-                </label>
-                <input
-                  name="experienceYears"
-                  value={data.experienceYears}
-                  onChange={handleChange}
-                  type="text"
-                  id="experienceYears"
-                  className="bg-gray-200 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-black block w-full p-2.5 "
-                  placeholder="Enter experience"
-                />
-              </div>
               <div>
               <label
                 htmlFor="projects_assigned"
