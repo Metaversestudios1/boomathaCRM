@@ -223,9 +223,6 @@ const Managers = () => {
                   <NavLink to={`/managers/viewmanager/123456`}>
                     <IoMdEye className="text-2xl cursor-pointer text-blue-900" />
                   </NavLink>
-                  <NavLink to={`/managers/editmanager/45141564153541351`}>
-                    <CiEdit className="text-2xl cursor-pointer text-green-900" />
-                  </NavLink>
                   <MdDelete className="text-2xl cursor-pointer text-red-900" />
                 </div>
               </td>
