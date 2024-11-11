@@ -8,7 +8,7 @@ import EditManager from "./components/managers/EditManager";
 import ViewManager from "./components/managers/ViewManager";
 import Agents from "./components/Agents";
 import Properties from "./components/Properties";
-import ClientDetails from "./components/ClientDetails";
+import ClientDetails from "./components/clientDetails";
 import EditClientDetails from "./components/EditClientDetails";
 
 
