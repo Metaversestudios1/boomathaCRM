@@ -163,6 +163,9 @@ const Properties = () => {
               <th scope="col" className="px-6 py-3 border-2 border-gray-300">
                 Availability Status
               </th>
+              <td className=" p-5   border-2  border-gray-300">
+                Client Information
+              </td>
             </tr>
           </thead>
 
@@ -186,6 +189,13 @@ const Properties = () => {
               <td className="px-6 py-4 border-2 border-gray-300">NA</td>
 
               <td className="px-6 py-4 border-2 border-gray-300">Availabile</td>
+              <td className=" p-5   border-2  border-gray-300">
+                <div className="flex items-center">
+                  <NavLink to={`/clientDetails/123456`}>
+                    <div className="text-white bg-green-800 rounded-lg px-8 py-2">client Information</div>
+                  </NavLink>
+                </div>
+              </td>
             </tr>
             <tr className="bg-white">
               <th
@@ -206,6 +216,13 @@ const Properties = () => {
               <td className="px-6 py-4 border-2 border-gray-300">NA</td>
 
               <td className="px-6 py-4 border-2 border-gray-300">Availabile</td>
+              <td className=" p-5   border-2  border-gray-300">
+              <div className="flex items-center">
+                  <NavLink to={`/clientDetails/123456`}>
+                    <div className="text-white bg-green-800 rounded-lg px-8 py-2">client Information</div>
+                  </NavLink>
+                </div>
+              </td>
             </tr>
           </tbody>
         </table>
