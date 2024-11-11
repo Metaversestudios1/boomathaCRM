@@ -24,6 +24,7 @@ function App() {
             <Route path="/viewagents/:id" element={<Agents />} />
             <Route path="/viewagents" element={<Agents />} />
             <Route path="/viewproperties/:id" element={<Properties />} />
+            <Route path="/viewproperties" element={<Properties />} />
           </Routes>
         </Layout>
       </Router>
