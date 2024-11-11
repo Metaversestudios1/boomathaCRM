@@ -1,10 +1,10 @@
 import "./App.css";
 import Layout from "./components/Layout";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Home from "./Components/Home";
+import Home from "./components/Home";
 import Managers from "./components/managers/Managers";
-import AddManager from "./Components/managers/AddManager";
-import EditManager from "./Components/managers/EditManager";
+import AddManager from "./components/managers/AddManager";
+import EditManager from "./components/managers/EditManager";
 import ViewManager from "./components/managers/ViewManager";
 import Agents from "./components/Agents";
 import Properties from "./components/Properties";
