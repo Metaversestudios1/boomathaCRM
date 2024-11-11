@@ -22,6 +22,7 @@ function App() {
             <Route path="/managers/editmanager/:id" element={<EditManager />} />
             <Route path="/managers/viewmanager/:id" element={<ViewManager />} />
             <Route path="/viewagents/:id" element={<Agents />} />
+            <Route path="/viewagents" element={<Agents />} />
             <Route path="/viewproperties/:id" element={<Properties />} />
           </Routes>
         </Layout>

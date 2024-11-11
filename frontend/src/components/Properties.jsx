@@ -163,9 +163,6 @@ const Properties = () => {
               <th scope="col" className="px-6 py-3 border-2 border-gray-300">
                 Availability Status
               </th>
-              <th scope="col" className="px-6 py-3 border-2 border-gray-300">
-                Ratings
-              </th>
             </tr>
           </thead>
 
@@ -189,7 +186,6 @@ const Properties = () => {
               <td className="px-6 py-4 border-2 border-gray-300">NA</td>
 
               <td className="px-6 py-4 border-2 border-gray-300">Availabile</td>
-              <td className="px-6 py-4 border-2 border-gray-300">5</td>
             </tr>
             <tr className="bg-white">
               <th
@@ -210,7 +206,6 @@ const Properties = () => {
               <td className="px-6 py-4 border-2 border-gray-300">NA</td>
 
               <td className="px-6 py-4 border-2 border-gray-300">Availabile</td>
-              <td className="px-6 py-4 border-2 border-gray-300">4.5</td>
             </tr>
           </tbody>
         </table>

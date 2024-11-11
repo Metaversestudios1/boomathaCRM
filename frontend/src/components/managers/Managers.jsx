@@ -168,15 +168,7 @@ const Managers = () => {
               <th scope="col" className="px-6 py-3 border-2 border-gray-300">
                 Properties
               </th>
-              <th scope="col" className="px-6 py-3 border-2 border-gray-300">
-                Experience Years
-              </th>
-              <th scope="col" className="px-6 py-3 border-2 border-gray-300">
-                Availability Status
-              </th>
-              <th scope="col" className="px-6 py-3 border-2 border-gray-300">
-                Ratings
-              </th>
+            
               <th scope="col" className="px-6 py-3 border-2 border-gray-300">
                 Agents
               </th>
@@ -212,9 +204,7 @@ const Managers = () => {
                 Homeland, ABC viewpoint
               </td>
 
-              <td className="px-6 py-4 border-2 border-gray-300">5</td>
-              <td className="px-6 py-4 border-2 border-gray-300">active</td>
-              <td className="px-6 py-4 border-2 border-gray-300">5</td>
+             
               <td className="px-6 py-4 border-2 border-gray-300">
                 <NavLink to="/viewagents/3245435"><div className="text-white bg-green-800 rounded-lg px-8 py-2">View agents</div></NavLink>
               </td>

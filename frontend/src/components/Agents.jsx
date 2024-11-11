@@ -153,6 +153,9 @@ const Agents = () => {
                 Full name
               </th>
               <th scope="col" className="px-6 py-3 border-2 border-gray-300">
+                manager name
+              </th>
+              <th scope="col" className="px-6 py-3 border-2 border-gray-300">
                 Contact
               </th>
               <th scope="col" className="px-6 py-3 border-2 border-gray-300">
@@ -161,15 +164,7 @@ const Agents = () => {
               <th scope="col" className="px-6 py-3 border-2 border-gray-300">
                 Properties assigned
               </th>
-              <th scope="col" className="px-6 py-3 border-2 border-gray-300">
-                Experience Years
-              </th>
-              <th scope="col" className="px-6 py-3 border-2 border-gray-300">
-               Status
-              </th>
-              <th scope="col" className="px-6 py-3 border-2 border-gray-300">
-                Ratings
-              </th>
+             
               <th scope="col" className="px-6 py-3 border-2 border-gray-300">
                 Properties
               </th>
@@ -191,6 +186,12 @@ const Agents = () => {
               >
                 agent 1
               </th>
+              <th
+                scope="row"
+                className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap border-2 border-gray-300"
+              >
+                john
+              </th>
               <td className="px-6 py-4 border-2 border-gray-300">1234567890</td>
               <td className="px-6 py-4 border-2 border-gray-300">
                 agent@gmail.com
@@ -198,10 +199,10 @@ const Agents = () => {
               <td className="px-6 py-4 border-2 border-gray-300">
                 property 1, property 2
               </td>
+              <td className="px-6 py-4 border-2 border-gray-300">
+                Status
+              </td>
 
-              <td className="px-6 py-4 border-2 border-gray-300">5</td>
-              <td className="px-6 py-4 border-2 border-gray-300">active</td>
-              <td className="px-6 py-4 border-2 border-gray-300">5</td>
               
               <td className=" p-5   border-2  border-gray-300">
                 <div className="flex items-center">
@@ -225,6 +226,7 @@ const Agents = () => {
               >
                 agent 2
               </th>
+              <td className="px-6 py-4 border-2 border-gray-300">john</td>
               <td className="px-6 py-4 border-2 border-gray-300">4563219870</td>
               <td className="px-6 py-4 border-2 border-gray-300">
                 agent2@gmail.com
@@ -233,9 +235,7 @@ const Agents = () => {
                 property 1, property 2
               </td>
 
-              <td className="px-6 py-4 border-2 border-gray-300">5</td>
               <td className="px-6 py-4 border-2 border-gray-300">active</td>
-              <td className="px-6 py-4 border-2 border-gray-300">5</td>
              
               <td className=" p-5   border-2  border-gray-300">
                 <div className="flex items-center">
