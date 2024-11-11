@@ -198,6 +198,14 @@ const ClientDetails = () => {
               <td className="px-6 py-4 border-2 border-gray-300">test description</td>
 
               <td className="px-6 py-4 border-2 border-gray-300">Approved</td>
+              <td className=" p-5   border-2  border-gray-300">
+              <div className="flex items-center">
+                                   
+                  <NavLink to={`/editclientdetail/124867`}>
+                    <CiEdit className="text-2xl cursor-pointer text-green-900" />
+                 </NavLink>
+                 </div>
+                  </td>
             </tr>
             <tr className="bg-white">
               <th
@@ -227,7 +235,7 @@ const ClientDetails = () => {
               <td className=" p-5   border-2  border-gray-300">
                    <div className="flex items-center">
                                         
-                       <NavLink to={`/editclientdetail/${item?._id}`}>
+                       <NavLink to={`/editclientdetail/421563`}>
                          <CiEdit className="text-2xl cursor-pointer text-green-900" />
                       </NavLink>
                       </div>
@@ -260,7 +268,7 @@ const ClientDetails = () => {
               <td className=" p-5   border-2  border-gray-300">
                    <div className="flex items-center">
                                         
-                       <NavLink to={`/editclientdetail/${item?._id}`}>
+                       <NavLink to={`/editclientdetail/124867`}>
                          <CiEdit className="text-2xl cursor-pointer text-green-900" />
                       </NavLink>
                       </div>
