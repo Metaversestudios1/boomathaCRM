@@ -220,9 +220,7 @@ const Managers = () => {
               </td>
               <td className=" p-5   border-2  border-gray-300">
                 <div className="flex items-center">
-                  <NavLink to={`/managers/viewmanager/123456`}>
-                    <IoMdEye className="text-2xl cursor-pointer text-blue-900" />
-                  </NavLink>
+                  
                   <MdDelete className="text-2xl cursor-pointer text-red-900" />
                 </div>
               </td>
