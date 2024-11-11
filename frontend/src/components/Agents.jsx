@@ -164,6 +164,9 @@ const Agents = () => {
               <th scope="col" className="px-6 py-3 border-2 border-gray-300">
                 Properties assigned
               </th>
+              <th scope="col" className="px-6 py-3 border-2 border-gray-300">
+                Status
+              </th>
              
               <th scope="col" className="px-6 py-3 border-2 border-gray-300">
                 Properties
@@ -200,7 +203,7 @@ const Agents = () => {
                 property 1, property 2
               </td>
               <td className="px-6 py-4 border-2 border-gray-300">
-                Status
+                active
               </td>
 
               
