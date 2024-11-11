@@ -153,15 +153,7 @@ const ViewManager = () => {
                 <b>Assigned agents</b> :agent1, agent2
               </label>
             </div>
-            <div>
-              <label
-                htmlFor="rank"
-                className="block mb-2 text-sm font-medium text-gray-900 dark:text-black"
-              >
-                <b>Availability Status</b>: Active
-                {/* Display rank name */}
-              </label>
-            </div>
+         
             <div>
               <label
                 htmlFor="clients"
@@ -171,22 +163,8 @@ const ViewManager = () => {
               </label>
             </div>
            
-            <div>
-              <label
-                htmlFor="superior"
-                className="block mb-2 text-sm font-medium text-gray-900 dark:text-black"
-              >
-                <b>Experience</b> : 5
-              </label>
-            </div>
-            <div>
-              <label
-                htmlFor="superior"
-                className="block mb-2 text-sm font-medium text-gray-900 dark:text-black"
-              >
-                <b>Rating</b> : 5
-              </label>
-            </div>
+          
+          
           </div>
         </form>
       </div>
