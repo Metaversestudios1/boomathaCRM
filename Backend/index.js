@@ -23,7 +23,7 @@ const NotificationRoute = require("./Routes/NotificationRoutes");
 connectDB();
 const server = http.createServer(app);
 const corsOptions = {
-  origin: ["http://localhost:3000","http://localhost:3001"],
+  origin: ["https://boomatha-crm-frontend.vercel.app"],
   methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
   preflightContinue: false,
   credentials: true,
