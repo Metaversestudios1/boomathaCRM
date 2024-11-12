@@ -14,7 +14,7 @@ const ViewManager = () => {
   //   const [superiorAgent, setSuperiorAgent] = useState(null); // State for superior agent name
 
   //   const { id } = params;
-  //   const navigate = useNavigate();
+    const navigate = useNavigate();
 
   //   useEffect(() => {
   //     const fetchData = async () => {

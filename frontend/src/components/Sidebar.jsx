@@ -1,12 +1,9 @@
 import React, { useState } from "react";
 import { FaAngleDown, FaAngleRight } from "react-icons/fa6";
 import { NavLink } from "react-router-dom";
-import { AiOutlineProduct } from "react-icons/ai";
-import { CiCircleList } from "react-icons/ci";
+import { GrUserManager } from "react-icons/gr";
 import { PiWarehouse } from "react-icons/pi";
-import { GrHistory } from "react-icons/gr";
-import { GiNotebook } from "react-icons/gi";
-import { FaPeopleRoof } from "react-icons/fa6";
+
 const Sidebar = ({ sidebar, toggleSideBar }) => {
   const [openSubMenu, setOpenSubMenu] = useState({
     client: false,
@@ -90,23 +87,7 @@ const Sidebar = ({ sidebar, toggleSideBar }) => {
                       : "flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-white rounded-lg hover:text-black hover:bg-white"
                   }
                 >
-                  <svg
-                    className="size-4 "
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  >
-                    <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
-                    <circle cx="9" cy="7" r="4" />
-                    <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
-                    <path d="M16 3.13a4 4 0 0 1 0 7.75" />
-                  </svg>
+                <GrUserManager className="text-lg"/>
                   <div className="text-sm">Managers</div>
                 </NavLink>
               </li>
@@ -156,23 +137,7 @@ const Sidebar = ({ sidebar, toggleSideBar }) => {
                       : "flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-white rounded-lg hover:text-black hover:bg-white"
                   }
                 >
-                  <svg
-                    className="size-4 "
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  >
-                    <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
-                    <circle cx="9" cy="7" r="4" />
-                    <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
-                    <path d="M16 3.13a4 4 0 0 1 0 7.75" />
-                  </svg>
+                <PiWarehouse className="text-lg"/>
                   <div className="text-sm">Properties</div>
                 </NavLink>
               </li>

@@ -1,52 +1,54 @@
-import React, {  useState } from "react";
+import React, {  useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Cookies from "js-cookie";
 import { ToastContainer, toast } from "react-toastify";
 import { CgLogOut } from "react-icons/cg";
 import { IoMdSettings } from "react-icons/io";
 import { FaAngleDown, FaAngleRight } from "react-icons/fa6";
+import getUserFromToken from "./utils/getUserFromToken";
+import { AuthContext } from "../context/AuthContext";
 
 const Navbar = ({ toggleSideBar }) => {
-  // const { setAuth } = useContext(AuthContext);
+  const { setAuth } = useContext(AuthContext);
   const [settingDropdown, setSettingDropdown] = useState(false);
   const navigate = useNavigate();
-  // const userInfo = getUserFromToken();
-  // const handleLogout = async () => {
-  //   try {
-  //     const res = await fetch(
-  //       `${process.env.REACT_APP_BACKEND_URL}/api/logout`,
-  //       {
-  //         method: "POST",
-  //         credentials: "include",
-  //         headers: {
-  //           "Content-Type": "application/json", // Set content type to JSON
-  //         },
-  //         body: JSON.stringify({ id: userInfo.id }), // Include user ID in the request body
-  //       // Send cookies with the request
-  //       }
-  //     );
-  //     const response = await res.json();
-  //     if (response.success) {
-  //       Cookies.remove("jwt");
-  //       toast.success("Logout Successfully", {
-  //         position: "top-right",
-  //         autoClose: 1000,
-  //         hideProgressBar: false,
-  //         closeOnClick: true,
-  //         pauseOnHover: true,
-  //         draggable: true,
-  //         progress: undefined,
-  //         theme: "light",
-  //       });
-  //       setAuth({ isAuthenticated: false, user: null });
-  //       setTimeout(() => {
-  //         navigate("/login");
-  //       }, 1500);
-  //     }
-  //   } catch (error) {
-  //     console.error("Logout failed:", error);
-  //   }
-  // };
+  const userInfo = getUserFromToken();
+  const handleLogout = async () => {
+    try {
+      const res = await fetch(
+        `${import.meta.env.VITE_BACKEND_URL}/api/logout`,
+        {
+          method: "POST",
+          credentials: "include",
+          headers: {
+            "Content-Type": "application/json", // Set content type to JSON
+          },
+          body: JSON.stringify({ id: userInfo.id }), // Include user ID in the request body
+        // Send cookies with the request
+        }
+      );
+      const response = await res.json();
+      if (response.success) {
+        Cookies.remove("jwt");
+        toast.success("Logout Successfully", {
+          position: "top-right",
+          autoClose: 1000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+        });
+        setAuth({ isAuthenticated: false, user: null });
+        setTimeout(() => {
+          navigate("/login");
+        }, 1500);
+      }
+    } catch (error) {
+      console.error("Logout failed:", error);
+    }
+  };
 
   return (
     <header className="flex flex-wrap justify-start z-50 w-full text-sm shadow-lg">
@@ -133,7 +135,7 @@ const Navbar = ({ toggleSideBar }) => {
               </div>
               <div className="w-1/3  ml-5">
                 <button
-                  // onClick={handleLogout}
+                  onClick={handleLogout}
                   className="flex items-center text-[16px] px-4 py-2 font-medium text-white bg-gray-800 rounded-full hover:scale-110 transform transition-transform duration-200"
                 >
                   Logout
