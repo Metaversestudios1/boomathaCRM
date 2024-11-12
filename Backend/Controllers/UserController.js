@@ -64,7 +64,7 @@ const insertuser = async (req, res) => {
     try{
         const result = await User.updateOne(
             {_id:id},
-            { $set :updatedata.oldData}
+            { $set :updatedata.data}
         );
         if(!result){
             res.status(404).json({success:false,message:"user not found"});
@@ -130,6 +130,7 @@ const getAlluser = async (req,res) => {
             .sort({ createdAt: -1 })
             .skip((page - 1) * pageSize)
             .limit(pageSize);
+            console.log(result)
         const count = await User.find(query).countDocuments();
         res.status(200).json({ success: true, result, count });
 

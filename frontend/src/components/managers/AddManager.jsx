@@ -15,30 +15,16 @@ const AddManagers = () => {
 
   const navigate = useNavigate();
   const initialState = {
-    name: "",
+    username: "",
     email: "",
     password: "",
-    employeeType: "",
-    contactNumber: "",
-    licenseNumber: "",
-    experienceYears: "",
+    contact: "",
+    role: "",
   };
   const [data, setData] = useState(initialState);
 
-  useEffect(() => {
-    fetchCategory();
-  }, []);
 
-  const fetchCategory = async () => {
-    const res = await fetch(
-      `${import.meta.env.VITE_BACKEND_URL}/api/getAllCategoryWithoutPagination`
-    );
-    const response = await res.json();
-    if (response.success) {
-      setCategories(response.result);
-    }
-  };
-  const validateEmployeeForm = () => {
+  const validateManagerForm = () => {
     $.validator.addMethod(
       "validPhone",
       function (value, element) {
@@ -48,9 +34,9 @@ const AddManagers = () => {
     );
 
     // Initialize jQuery validation
-    $("#employeeform").validate({
+    $("#managerform").validate({
       rules: {
-        name: {
+        username: {
           required: true,
         },
         email: {
@@ -60,19 +46,14 @@ const AddManagers = () => {
         password: {
           required: true,
         },
-        contactNumber: {
+        contact: {
           required: true,
           validPhone: true,
         },
-        employeeType: {
-          required: true,
-        },
-        licenseNumber: {
-          required: true,
-        },
+       
       },
       messages: {
-        name: {
+        username: {
           required: "Please enter name",
         },
         email: {
@@ -82,16 +63,11 @@ const AddManagers = () => {
         password: {
           required: "Please enter password",
         },
-        employeeType: {
-          required: "Please select employee type",
-        },
-        contactNumbe: {
+        contact: {
           required: "Please enter contact details",
           validPhone: "Phone number must be exactly 10 digits",
         },
-        licenseNumber: {
-          required: "Please enter license number",
-        },
+      
       },
       errorElement: "div",
       errorPlacement: function (error, element) {
@@ -107,7 +83,7 @@ const AddManagers = () => {
     });
 
     // Return validation status
-    return $("#employeeform").valid();
+    return $("#managerform").valid();
   };
 
   const handleChange = (e) => {
@@ -117,10 +93,10 @@ const AddManagers = () => {
       [name]: value,
     }));
   };
-
+console.log(data)
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if (!validateEmployeeForm()) {
+    if (!validateManagerForm()) {
       //setError("Please fill in all required fields.");
       return;
     }
@@ -129,7 +105,7 @@ const AddManagers = () => {
       setLoader(true);
 
       const res = await fetch(
-        `${import.meta.env.VITE_BACKEND_URL}/api/insertEmployee`,
+        `${import.meta.env.VITE_BACKEND_URL}/api/insertuser`,
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },
@@ -138,7 +114,7 @@ const AddManagers = () => {
       );
       const response = await res.json();
       if (response.success) {
-        toast.success("New employee is added Successfully!", {
+        toast.success("New manager is added Successfully!", {
           position: "top-right",
           autoClose: 1000,
           hideProgressBar: false,
@@ -149,7 +125,7 @@ const AddManagers = () => {
           theme: "light",
         });
         setTimeout(() => {
-          navigate("/employees");
+          navigate("/managers");
         }, 1500);
       } else {
         setLoader(false);
@@ -190,7 +166,7 @@ const AddManagers = () => {
       {loader ? (
         <div className="absolute w-[80%] h-[40%] flex justify-center items-center">
           <div
-            className=" flex justify-center h-8 w-8 animate-spin rounded-full border-4 border-solid border-current border-e-transparent align-[-0.125em] text-surface motion-reduce:animate-[spin_1.5s_linear_infinite] dark:text-white"
+            className=" flex justify-center h-8 w-8 animate-spin rounded-full border-4 border-solid border-current border-e-transparent align-[-0.125em] text-surface motion-reduce:animate-[spin_1.5s_linear_infinite] "
             role="status"
           >
             <span className="!absolute !-m-px !h-px !w-px !overflow-hidden !whitespace-nowrap !border-0 !p-0 ![clip:rect(0,0,0,0)]">
@@ -200,21 +176,21 @@ const AddManagers = () => {
         </div>
       ) : (
         <div className="w-[70%] m-auto my-10">
-          <form id="employeeform">
+          <form id="managerform">
             <div className="grid gap-6 mb-6 md:grid-cols-2 items-center">
               <div>
                 <label
-                  htmlFor="name"
+                  htmlFor="username"
                   className="block mb-2 text-sm font-medium text-gray-900 dark:text-black"
                 >
                   Full Name<span className="text-red-900 text-lg ">&#x2a;</span>
                 </label>
                 <input
-                  name="name"
-                  value={data.name}
+                  name="username"
+                  value={data.username}
                   onChange={handleChange}
                   type="text"
-                  id="name"
+                  id="username"
                   className="bg-gray-200 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-black block w-full p-2.5 "
                   placeholder="John"
                   required
@@ -222,15 +198,15 @@ const AddManagers = () => {
               </div>
               <div>
                 <label
-                  htmlFor="contactNumber"
+                  htmlFor="contact"
                   className="block mb-2 text-sm font-medium text-gray-900 dark:text-black"
                 >
                   Contact number
                   <span className="text-red-900 text-lg ">&#x2a;</span>
                 </label>
                 <input
-                  name="contactNumber"
-                  value={data.contactNumber}
+                  name="contact"
+                  value={data.contact}
                   onChange={handleChange}
                   type="text"
                   id="contact"
@@ -276,68 +252,22 @@ const AddManagers = () => {
                   required
                 />
               </div>
-
               <div>
-              <label
-                htmlFor="projects_assigned"
-                className="block mb-2 text-sm font-medium text-gray-900 dark:text-black"
-              >
-               Agents assign
+              <label htmlFor="role" className="block mb-2 text-sm font-medium text-gray-900 dark:text-black">
+             Role<span className="text-red-900 text-lg ">&#x2a;</span>
               </label>
-              <div className="relative">
-                <button
-                  type="button"
-                  onClick={()=>{setDropdownOpen(!dropdownOpen)}}
-                  // onBlur={handleDropdownBlur}
-                  className="bg-gray-200 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-black w-full p-2.5 flex justify-between items-center"
-                >
-                  Select agents<FaAngleDown className="text-end" />
-                </button>
-                {dropdownOpen && (<div className="absolute top-full left-0 bg-white border border-gray-300 rounded-sm shadow-lg w-full">
-                 
-                    <div  className="p-2  bg-gray-200 text-gray-900 text-sm  focus:ring-blue-500 focus:border-black block w-full" onMouseDown={(e) => e.preventDefault()}>
-                      <input
-                        type="checkbox"
-                        id={`agent-1`}
-                        value=""
-                        // checked={data.currentInventory.includes(item._id)}
-                        // onChange={() => handleCheckboxChange(item._id)}
-                        className="mr-2"
-                      />
-                      <label htmlFor={`agent-1`} className="text-gray-900 text-sm">
-                        agent 1
-                      </label>
-                    </div>
-                    <div  className="p-2  bg-gray-200 text-gray-900 text-sm  focus:ring-blue-500 focus:border-black block w-full" onMouseDown={(e) => e.preventDefault()}>
-                      <input
-                        type="checkbox"
-                        id={`agent-2`}
-                        value=""
-                        // checked={data.currentInventory.includes(item._id)}
-                        // onChange={() => handleCheckboxChange(item._id)}
-                        className="mr-2"
-                      />
-                      <label htmlFor={`agent-2`} className="text-gray-900 text-sm">
-                        agent 2
-                      </label>
-                    </div>
-                    <div  className="p-2  bg-gray-200 text-gray-900 text-sm  focus:ring-blue-500 focus:border-black block w-full" onMouseDown={(e) => e.preventDefault()}>
-                      <input
-                        type="checkbox"
-                        id={`agent-3`}
-                        value=""
-                        // checked={data.currentInventory.includes(item._id)}
-                        // onChange={() => handleCheckboxChange(item._id)}
-                        className="mr-2"
-                      />
-                      <label htmlFor={`agent-3`} className="text-gray-900 text-sm">
-                        agent 3
-                      </label>
-                    </div>
-                </div>)}
-              </div>
-              </div>
-              
+              <div>
+              <select name="role" value={data.role} onChange={handleChange} className="bg-gray-200 border text-gray-900 text-sm rounded-lg p-2.5 w-full">
+                <option value="">Select role</option>
+                  <option  value="Manager">
+                    Manager
+                  </option>
+                  <option  value="Agent">
+                    Agent
+                  </option>
+              </select>
+            </div>
+            </div>
          
             </div>
 

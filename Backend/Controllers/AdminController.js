@@ -109,21 +109,7 @@ const login = async (req, res) => {
 
     const tokenExpiryDuration = 1 * 60 * 60 * 1000; // 1 hour in milliseconds
     // Check if last login time is set and not expired
-    if (admin.lastLoginToken && admin.lastLoginTime) {
-      const timeElapsed = Date.now() - admin.lastLoginTime;
-      if (timeElapsed < tokenExpiryDuration) {
-        return res.status(403).json({
-          success: false,
-          message: "Already logged in on another browser. Please log out from there first.",
-        });
-      } else {
-        // Expired session, reset login fields
-        admin.lastLoginToken = null;
-        admin.lastLoginTime = null;
-        await admin.save();
-      }
-    }
-
+ 
     // Generate a new JWT token
     const token = jwt.sign(
       { id: admin._id },
@@ -160,21 +146,9 @@ const login = async (req, res) => {
 };
 const logout = async (req, res) => {
   try {
-    const { id } = req.body;
 
-    // Step 1: Clear the session cookies (JWT and session ID)
     res.clearCookie("connect.sid"); // Clear the session ID cookie
     res.clearCookie("token"); // Clear the JWT cookie
-
-    // Step 2: Reset `lastLoginToken` and `lastLoginTime` in the database
-    if (id) {
-      const admin = await Admin.findById(id);
-      if (admin) {
-        admin.lastLoginToken = null; // Reset last login token
-        admin.lastLoginTime = null;  // Reset last login time
-        await admin.save(); // Save the changes
-      }
-    }
 
     return res.status(200).json({ success: true, message: "Successfully logged out" });
   } catch (err) {

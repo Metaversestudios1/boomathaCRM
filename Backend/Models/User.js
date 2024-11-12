@@ -17,6 +17,12 @@ const UserSchema = new mongoose.Schema(
       type: String,
       unique:true
     },
+    photo: {
+    publicId: { type: String },
+    url: { type: String },
+    originalname: { type: String },
+    mimetype: { type: String },
+  },
     role :{
       Enum: ['Manager', 'Agent']
     },

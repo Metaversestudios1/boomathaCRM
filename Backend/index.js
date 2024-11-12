@@ -8,22 +8,22 @@ const PORT = process.env.PORT || 8000;
 
 const AdminRoute = require("./Routes/AdminRoute");
 const UserRoute = require("./Routes/UserRoute");
-const SettingRoutes = require("./Routes/SettingRoutes");
-const ClientRoutes = require("./Routes/ClientRoutes");
-const PropertyRoutes = require("./Routes/PropertyRoutes");
-const AgentRoutes = require("./Routes/AgentRoutes");
-const ProjectRoutes = require("./Routes/ProjectRoutes");
-const CommisionRoutes = require("./Routes/CommisionRoutes");
-const SiteRoutes = require("./Routes/SiteRoutes");
-const RankRoutes = require("./Routes/RankRoutes");
-const DashboardRoutes = require("./Routes/DashboardRoutes");
-const CommonRoute = require("./Routes/CommonRoute");
-const NotificationRoute = require("./Routes/NotificationRoutes");
+// const SettingRoutes = require("./Routes/SettingRoutes");
+// const ClientRoutes = require("./Routes/ClientRoutes");
+// const PropertyRoutes = require("./Routes/PropertyRoutes");
+// const AgentRoutes = require("./Routes/AgentRoutes");
+// const ProjectRoutes = require("./Routes/ProjectRoutes");
+// const CommisionRoutes = require("./Routes/CommisionRoutes");
+// const SiteRoutes = require("./Routes/SiteRoutes");
+// const RankRoutes = require("./Routes/RankRoutes");
+// const DashboardRoutes = require("./Routes/DashboardRoutes");
+// const CommonRoute = require("./Routes/CommonRoute");
+// const NotificationRoute = require("./Routes/NotificationRoutes");
 // Connect to the database
 connectDB();
 const server = http.createServer(app);
 const corsOptions = {
-  origin: ["http://localhost:3000","http://localhost:3001"],
+  origin: ["http://localhost:3000","http://localhost:5173"],
   methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
   preflightContinue: false,
   credentials: true,
@@ -37,17 +37,17 @@ app.use(express.urlencoded({ extended: true })); // For parsing application/x-ww
 
 app.use("/api", UserRoute);
 app.use("/api", AdminRoute);
-app.use("/api", SettingRoutes);
-app.use("/api", PropertyRoutes);
-app.use("/api", AgentRoutes);
-app.use("/api", ProjectRoutes);
-app.use("/api", ClientRoutes);
-app.use("/api", CommisionRoutes);
-app.use("/api", SiteRoutes);
-app.use("/api", RankRoutes);
-app.use("/api", DashboardRoutes);
-app.use("/api", CommonRoute);
-app.use("/api", NotificationRoute);
+// app.use("/api", SettingRoutes);
+// app.use("/api", PropertyRoutes);
+// app.use("/api", AgentRoutes);
+// app.use("/api", ProjectRoutes);
+// app.use("/api", ClientRoutes);
+// app.use("/api", CommisionRoutes);
+// app.use("/api", SiteRoutes);
+// app.use("/api", RankRoutes);
+// app.use("/api", DashboardRoutes);
+// app.use("/api", CommonRoute);
+// app.use("/api", NotificationRoute);
 
 // Root route
 app.get("/", (req, res) => {
