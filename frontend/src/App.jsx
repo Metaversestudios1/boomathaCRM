@@ -22,7 +22,7 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route element={<PrivateRoute />}>
             <Route element={<Layout />}>
-              <Route path="/dashboard" element={<Home />} />
+              <Route path="/" element={<Home />} />
               <Route path="/managers" element={<Managers />} />
               <Route path="/managers/addmanager" element={<AddManager />} />
               <Route path="/managers/editmanager/:id" element={<EditManager />} />
