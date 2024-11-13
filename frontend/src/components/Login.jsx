@@ -97,7 +97,7 @@ const Login = () => {
         Cookies.set("jwt", response.token);
         setAuth({ isAuthenticated: true, user: response.user });
         const redirectPath =
-          localStorage.getItem("redirectAfterLogin") || "/dashboard";
+          localStorage.getItem("redirectAfterLogin") || "/";
         localStorage.removeItem("redirectAfterLogin");
         setTimeout(() => {
           navigate(redirectPath);
