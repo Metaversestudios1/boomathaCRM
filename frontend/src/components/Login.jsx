@@ -22,7 +22,7 @@ const Login = () => {
 
   useEffect(() => {
     if (token) {
-      navigate("/dashboard");
+      navigate("/");
     }
   }, []);
   const validateLoginForm = () => {
